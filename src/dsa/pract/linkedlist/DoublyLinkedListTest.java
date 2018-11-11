@@ -21,14 +21,8 @@ public class DoublyLinkedListTest {
 		
 		dl.deleteAtPos(2);
 		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
 	 
+		System.out.println("Length of List by iterative -> " + new LengthOfLinkedList<Object>().findLength(dl.head,dl.head));
+		System.out.println("Length of List by recursive -> " + new LengthOfLinkedList<Object>().findLengthByRec(dl.head,dl.head));
 	}
 }

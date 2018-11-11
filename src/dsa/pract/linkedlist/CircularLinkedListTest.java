@@ -30,16 +30,7 @@ public class CircularLinkedListTest {
 		cl.print();
 		cl.deleteFirst();
 		cl.print();
-		
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteFirst();
-		cl.deleteFirst();
-		cl.insertLast(new Node<Object>(5, null));
-		cl.print();
+
 	}
 
 

@@ -16,24 +16,27 @@ public class DoublyCircularLinkedListTest {
 		
 		System.out.println("Generic DoublyCircularLinkedList Example..");
 		
-		DoublyCircularLinkedList<Integer> ll = new DoublyCircularLinkedList<Integer>();
+		DoublyCircularLinkedList<Integer> cl = new DoublyCircularLinkedList<Integer>();
 		
-		ll.insertFirst(new DLLNode<Integer>(1, null, null));
-		ll.insertFirst(new DLLNode<Integer>(2, null, null));
-		ll.insertFirst(new DLLNode<Integer>(3, null, null));
-		ll.insertFirst(new DLLNode<Integer>(4, null, null));
-		ll.print();
-		ll.insertLast(new DLLNode<Integer>(5, null, null));
-		ll.insertLast(new DLLNode<Integer>(6, null, null));
-		ll.insertLast(new DLLNode<Integer>(7, null, null));
-		ll.print();
+		cl.insertFirst(new DLLNode<Integer>(1, null, null));
+		cl.insertFirst(new DLLNode<Integer>(2, null, null));
+		cl.insertFirst(new DLLNode<Integer>(3, null, null));
+		cl.insertFirst(new DLLNode<Integer>(4, null, null));
+		cl.print();
+		cl.insertLast(new DLLNode<Integer>(5, null, null));
+		cl.insertLast(new DLLNode<Integer>(6, null, null));
+		cl.insertLast(new DLLNode<Integer>(7, null, null));
+		cl.print();
 		
-		ll.deleteFirst();
-		ll.print();
+		cl.deleteFirst();
+		cl.print();
 		
-		ll.deleteLast();
-		ll.deleteLast();
-		ll.print();
+		cl.deleteLast();
+		cl.deleteLast();
+		cl.print();
+		
+		System.out.println("Length of List by iterative -> " + new LengthOfLinkedList<Integer>().findLength(cl.tail,cl.tail));
+		System.out.println("Length of List by recursive -> " + new LengthOfLinkedList<Integer>().findLengthByRec(cl.tail,cl.tail));
 	}
 
 }

@@ -27,5 +27,7 @@ public class SignlyLinkedListTest {
 		
 		ll.print();
 		
+		System.out.println("Length of List by iterative -> " + new LengthOfLinkedList<Integer>().findLength(ll.head));
+		System.out.println("Length of List by recursive -> " + new LengthOfLinkedList<Integer>().findLengthByRec(ll.head));
 	}
 }
