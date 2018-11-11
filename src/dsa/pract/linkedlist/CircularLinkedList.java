@@ -1,28 +1,36 @@
+/**
+ * CodePract by TheDeveloper
+ */
 package dsa.pract.linkedlist;
 
-public class CircularLinkedList {
+/**
+ *
+ * @author CodePract
+ *
+ */
+public class CircularLinkedList<E> {
 
-	Node tail = null;
+	Node<E> tail = null;
 	
-	public void insertFirst(Node node){
+	public void insertFirst(Node<E> node){
 		if(tail == null){
 			node.setNext(node);
 		}
 		else{
-			Node last = getLastNode();
+			Node<E> last = getLastNode();
 			node.setNext(last.getNext());
 			last.setNext(node);
 		}
 		tail = node;
 	}
 	
-	public void insertLast(Node node){
+	public void insertLast(Node<E> node){
 		if(tail == null){
 			node.setNext(node);
 			tail = node;
 		}
 		else{
-			Node last = getLastNode();
+			Node<E> last = getLastNode();
 			node.setNext(last.getNext());
 			last.setNext(node);
 		}
@@ -38,7 +46,7 @@ public class CircularLinkedList {
 			tail = null;
 			return;
 		}
-		Node last = getLastNode();
+		Node<E> last = getLastNode();
 		last.setNext(tail.getNext());
 		tail = tail.getNext();
 	}
@@ -53,7 +61,7 @@ public class CircularLinkedList {
 			tail = null;
 			return;
 		}
-		Node tmp = tail;
+		Node<E> tmp = tail;
 		while(tmp.getNext().getNext() != tail){
 			tmp = tmp.getNext();
 		}
@@ -65,7 +73,7 @@ public class CircularLinkedList {
 		if(tail == null){
 			return;
 		}
-		Node tmp = tail;
+		Node<E> tmp = tail;
 		while(tmp.getNext() != tail){
 			System.out.print(tmp.getData() + ",");
 			tmp = tmp.getNext();
@@ -73,44 +81,11 @@ public class CircularLinkedList {
 		System.out.println(tmp.getData() + ",");
 	}
 	
-	public Node getLastNode(){
-		Node tmp = tail;
+	public Node<E> getLastNode(){
+		Node<E> tmp = tail;
 		while(tmp.getNext() != tail){
 			tmp = tmp.getNext();
 		}
 		return tmp;
 	}
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		CircularLinkedList cl = new CircularLinkedList();
-		
-		cl.insertFirst(new Node(1, null));
-		cl.insertFirst(new Node(2, null));
-		cl.insertFirst(new Node(3, null));
-		cl.insertFirst(new Node(4, null));
-		cl.insertLast(new Node(5, null));
-		cl.insertLast(new Node(6, null));
-		
-		cl.print();
-		
-		cl.deleteFirst();
-		cl.print();
-		cl.deleteFirst();
-		cl.print();
-		
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteLast();
-		cl.deleteFirst();
-		cl.deleteFirst();
-		cl.insertLast(new Node(5, null));
-		cl.print();
-	}
-
 }

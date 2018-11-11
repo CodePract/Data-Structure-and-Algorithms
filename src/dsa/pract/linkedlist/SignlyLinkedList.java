@@ -1,26 +1,31 @@
-package dsa.pract.linkedlist;
 /**
- * @author KMEVADA
+ * CodePract by TheDeveloper
+ */
+package dsa.pract.linkedlist;
+
+/**
+ *
+ * @author CodePract
  *
  */
-public class SignlyLinkedList {
+public class SignlyLinkedList<E> {
 	
-	Node head = null;
+	Node<E> head = null;
 	int length = 0;
 	
 	//insertion operations
-	public void insertAtFirst(Node newNode){
+	public void insertAtFirst(Node<E> newNode){
 		newNode.setNext(head);
 		head = newNode;
 		length++;
 	}
 	
-	public void insertAtEnd(Node newNode){
+	public void insertAtEnd(Node<E> newNode){
 		if(head == null){
 			head = newNode;
 			return;
 		}
-		Node temp = head;
+		Node<E> temp = head;
 		while(temp.getNext() != null){
 			temp = temp.getNext();
 		}
@@ -28,20 +33,20 @@ public class SignlyLinkedList {
 		length++;
 	}
 	
-	public void insertAtPosition(Node node,int pos){
+	public void insertAtPosition(Node<E> node,int pos){
 		if(pos <= 0 || head == null){
 			node.setNext(head);
 			head = node;
 		}
 		else if(pos > length){
-			Node temp = head;
+			Node<E> temp = head;
 			while(temp.getNext()!= null){
 				temp = temp.getNext();
 			}
 			temp.setNext(node);
 		}
 		else{
-			Node  next = head;
+			Node<E>  next = head;
 			int i = 0;
 			while(i < (pos-1)){
 				next = next.getNext();
@@ -65,7 +70,7 @@ public class SignlyLinkedList {
 	
 	public void deleteAtEnd(){
 		if(head != null){
-			Node next = head.getNext(),prev = head;
+			Node<E> next = head.getNext(),prev = head;
 			while(next.getNext() != null){
 				prev = next;
 				next = next.getNext();
@@ -91,7 +96,7 @@ public class SignlyLinkedList {
 			head = head.getNext();
 		}
 		else{
-			Node next = head,prev = head;
+			Node<E> next = head,prev = head;
 			int i = 0;
 			while(i < pos){
 				prev = next;
@@ -105,31 +110,12 @@ public class SignlyLinkedList {
 	}
 
 	public void print(){
-		Node tmp = head;
+		Node<E> tmp = head;
 		while(tmp.getNext() != null){
 			System.out.print(tmp.getData() + ",");
 			tmp = tmp.getNext();
 		}
 		System.out.print(tmp.getData() + "\n");
-	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		SignlyLinkedList ll = new SignlyLinkedList();
-		
-		ll.insertAtFirst(new Node(10, null));
-		ll.insertAtEnd(new Node(20, null));
-		ll.insertAtPosition(new Node(15, null), 1);
-		ll.insertAtPosition(new Node(5, null), 0);
-		
-		ll.print();
-		
-		ll.deleteAtPos(4);
-		
-		ll.print();
-		
 	}
 
 }

@@ -1,20 +1,24 @@
+/**
+ * CodePract by TheDeveloper
+ */
 package dsa.pract.linkedlist;
 
 /**
- * @author KMEVADA
+ *
+ * @author CodePract
  *
  */
-public class DoublyCircularLinkedList {
-	DLLNode tail;
+public class DoublyCircularLinkedList<E> {
+	DLLNode<E> tail;
 	
-	public void insertFirst(DLLNode node){
+	public void insertFirst(DLLNode<E> node){
 		if(tail == null){
 			node.setNext(node);
 			node.setPrev(node);
 			tail = node;
 		}
 		else{
-			DLLNode last = getLast();
+			DLLNode<E> last = getLast();
 			last.setNext(node);
 			node.setPrev(last);
 			node.setNext(tail);
@@ -23,14 +27,14 @@ public class DoublyCircularLinkedList {
 		}
 	}
 	
-	public void insertLast(DLLNode node){
+	public void insertLast(DLLNode<E> node){
 		if(tail == null){
 			node.setNext(node);
 			node.setPrev(node);
 			tail = node;
 		}
 		else{
-			DLLNode last = getLast();
+			DLLNode<E> last = getLast();
 			node.setNext(last.getNext());
 			node.setPrev(last);
 			last.setNext(node);
@@ -69,8 +73,8 @@ public class DoublyCircularLinkedList {
 		}
 	}
 	
-	public DLLNode getLast(){
-		 DLLNode tmp = tail;
+	public DLLNode<E> getLast(){
+		 DLLNode<E> tmp = tail;
 		 while(tmp.getNext() != tail){
 			 tmp = tmp.getNext();
 		 }
@@ -81,37 +85,12 @@ public class DoublyCircularLinkedList {
 		if(tail == null){
 			return;
 		}
-		DLLNode tmp = tail;
+		DLLNode<E> tmp = tail;
 		while(tmp.getNext() != tail){
 			System.out.print(tmp.getData() + ",");
 			tmp = tmp.getNext();
 		}
 		System.out.println(tmp.getData());
 	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		
-		DoublyCircularLinkedList ll = new DoublyCircularLinkedList();
-		
-		ll.insertFirst(new DLLNode(1, null, null));
-		ll.insertFirst(new DLLNode(2, null, null));
-		ll.insertFirst(new DLLNode(3, null, null));
-		ll.insertFirst(new DLLNode(4, null, null));
-		ll.print();
-		ll.insertLast(new DLLNode(5, null, null));
-		ll.insertLast(new DLLNode(6, null, null));
-		ll.insertLast(new DLLNode(7, null, null));
-		ll.print();
-		
-		ll.deleteFirst();
-		ll.print();
-		
-		ll.deleteLast();
-		ll.deleteLast();
-		ll.print();
-	}
-
+	
 }

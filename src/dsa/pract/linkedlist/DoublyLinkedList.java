@@ -1,12 +1,17 @@
-package dsa.pract.linkedlist;
 /**
- * @author KMEVADA
+ * CodePract by TheDeveloper
+ */
+package dsa.pract.linkedlist;
+
+/**
+ *
+ * @author CodePract
  *
  */
-public class DoublyLinkedList {
+public class DoublyLinkedList<E> {
 	
-	DLLNode head = null;
-	DLLNode tail = null;
+	DLLNode<E> head = null;
+	DLLNode<E> tail = null;
 	int length = 0;
 	
 	public DoublyLinkedList() {
@@ -17,7 +22,7 @@ public class DoublyLinkedList {
 		length = 0;*/
 	}
 	
-	public void insertFirst(DLLNode node){
+	public void insertFirst(DLLNode<E> node){
 		if(head == null){
 			head = tail = node;
 			head.setNext(tail);
@@ -31,7 +36,7 @@ public class DoublyLinkedList {
 		length++;
 	}
 	
-	public void insertLast(DLLNode node){
+	public void insertLast(DLLNode<E> node){
 		if(tail == null){
 			head = tail = node;
 			head.setNext(tail);
@@ -45,7 +50,7 @@ public class DoublyLinkedList {
 		length++;
 	}
 	
-	public void insertAtPos(DLLNode node,int pos){
+	public void insertAtPos(DLLNode<E> node,int pos){
 		if(pos <= 0){
 			insertFirst(node);
 		}
@@ -53,7 +58,7 @@ public class DoublyLinkedList {
 			insertLast(node);
 		}
 		else{
-			DLLNode next = head;
+			DLLNode<E> next = head;
 			int i = 0;
 			while(i < pos){
 				next = next.getNext();
@@ -103,7 +108,7 @@ public class DoublyLinkedList {
 			deleteLast();
 		}
 		else{
-			DLLNode prev = head,next = head;
+			DLLNode<E> prev = head,next = head;
 			int i = 1;
 			while( i < pos){
 				prev = next;
@@ -122,32 +127,12 @@ public class DoublyLinkedList {
 			System.out.println("Empty Linked List");
 			return;
 		}
-		DLLNode temp = head;
+		DLLNode<E> temp = head;
 		while(temp.getNext() != null){
 			System.out.print(temp.getData() + ",");
 			temp = temp.getNext();
 		}
 		System.out.println(temp.getData() + ",");
 	}
-
-	public static void main(String[] args){
-		DoublyLinkedList dl = new DoublyLinkedList();
-		dl.insertFirst(new DLLNode(5, null, null));
-		dl.insertLast(new DLLNode(4, null, null));
-		dl.insertAtPos(new DLLNode(10, null, null), 2);
-		
-		dl.print();
-		
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-		dl.deleteAtPos(2);
-		dl.print();
-	 
-	}
+	
 }

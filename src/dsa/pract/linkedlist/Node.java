@@ -1,26 +1,31 @@
-package dsa.pract.linkedlist;
 /**
- * @author KMEVADA
+ * CodePract by TheDeveloper
+ */
+package dsa.pract.linkedlist;
+
+/**
+ *
+ * @author CodePract
  *
  */
-public class Node {
-	int data;
-	Node next;
+public class Node<E> {
+	E data;
+	Node<E> next;
 	
-	public int getData() {
+	public E getData() {
 		return data;
 	}
-	public void setData(int data) {
+	public void setData(E data) {
 		this.data = data;
 	}
-	public Node getNext() {
+	public Node<E> getNext() {
 		return next;
 	}
-	public void setNext(Node next) {
+	public void setNext(Node<E> next) {
 		this.next = next;
 	}
 	
-	public Node(int data,Node node){
+	public Node(E data,Node<E> node){
 		this.data = data;
 		this.next = node;
 	}
