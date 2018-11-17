@@ -11,7 +11,8 @@ package dsa.pract.linkedlist;
 public class DoublyCircularLinkedList<E> {
 	DLLNode<E> tail;
 	
-	public void insertFirst(DLLNode<E> node){
+	public void insertFirst(E e){
+		DLLNode<E> node = new DLLNode<E>(e, null, null);
 		if(tail == null){
 			node.setNext(node);
 			node.setPrev(node);
@@ -27,7 +28,8 @@ public class DoublyCircularLinkedList<E> {
 		}
 	}
 	
-	public void insertLast(DLLNode<E> node){
+	public void insertLast(E e){
+		DLLNode<E> node = new DLLNode<E>(e, null, null);
 		if(tail == null){
 			node.setNext(node);
 			node.setPrev(node);

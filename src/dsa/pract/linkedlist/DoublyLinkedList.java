@@ -22,7 +22,8 @@ public class DoublyLinkedList<E> {
 		length = 0;*/
 	}
 	
-	public void insertFirst(DLLNode<E> node){
+	public void insertFirst(E e){
+		DLLNode<E> node = new DLLNode<E>(e, null, null);
 		if(head == null){
 			head = tail = node;
 			head.setNext(tail);
@@ -36,7 +37,8 @@ public class DoublyLinkedList<E> {
 		length++;
 	}
 	
-	public void insertLast(DLLNode<E> node){
+	public void insertLast(E e){
+		DLLNode<E> node = new DLLNode<E>(e, null, null);
 		if(tail == null){
 			head = tail = node;
 			head.setNext(tail);
@@ -50,14 +52,15 @@ public class DoublyLinkedList<E> {
 		length++;
 	}
 	
-	public void insertAtPos(DLLNode<E> node,int pos){
+	public void insertAtPos(E e,int pos){
 		if(pos <= 0){
-			insertFirst(node);
+			insertFirst(e);
 		}
 		else if(pos >= length){
-			insertLast(node);
+			insertLast(e);
 		}
 		else{
+			DLLNode<E> node = new DLLNode<E>(e, null, null);
 			DLLNode<E> next = head;
 			int i = 0;
 			while(i < pos){

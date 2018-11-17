@@ -18,14 +18,14 @@ public class DoublyCircularLinkedListTest {
 		
 		DoublyCircularLinkedList<Integer> cl = new DoublyCircularLinkedList<Integer>();
 		
-		cl.insertFirst(new DLLNode<Integer>(1, null, null));
-		cl.insertFirst(new DLLNode<Integer>(2, null, null));
-		cl.insertFirst(new DLLNode<Integer>(3, null, null));
-		cl.insertFirst(new DLLNode<Integer>(4, null, null));
+		cl.insertFirst(1);
+		cl.insertFirst(2);
+		cl.insertFirst(3);
+		cl.insertFirst(4);
 		cl.print();
-		cl.insertLast(new DLLNode<Integer>(5, null, null));
-		cl.insertLast(new DLLNode<Integer>(6, null, null));
-		cl.insertLast(new DLLNode<Integer>(7, null, null));
+		cl.insertLast(5);
+		cl.insertLast(6);
+		cl.insertLast(7);
 		cl.print();
 		
 		cl.deleteFirst();

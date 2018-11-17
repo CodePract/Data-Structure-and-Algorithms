@@ -8,19 +8,21 @@ package dsa.pract.linkedlist;
  * @author CodePract
  *
  */
-public class SignlyLinkedList<E> {
+public class SinglyLinkedList<E> {
 	
 	Node<E> head = null;
 	int length = 0;
 	
 	//insertion operations
-	public void insertAtFirst(Node<E> newNode){
+	public void insertAtFirst(E e){
+		Node<E> newNode = new Node<E>(e, null);
 		newNode.setNext(head);
 		head = newNode;
 		length++;
 	}
 	
-	public void insertAtEnd(Node<E> newNode){
+	public void insertAtEnd(E e){
+		Node<E> newNode = new Node<E>(e, null);
 		if(head == null){
 			head = newNode;
 			return;
@@ -33,7 +35,8 @@ public class SignlyLinkedList<E> {
 		length++;
 	}
 	
-	public void insertAtPosition(Node<E> node,int pos){
+	public void insertAtPosition(E e,int pos){
+		Node<E> node = new Node<E>(e, null);
 		if(pos <= 0 || head == null){
 			node.setNext(head);
 			head = node;

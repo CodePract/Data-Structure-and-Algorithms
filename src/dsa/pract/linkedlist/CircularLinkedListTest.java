@@ -17,12 +17,12 @@ public class CircularLinkedListTest {
 		System.out.println("Generic CircularLinkedList Example..");
 		CircularLinkedList<Object> cl = new CircularLinkedList<Object>();
 		
-		cl.insertFirst(new Node<Object>(1, null));
-		cl.insertFirst(new Node<Object>(2, null));
-		cl.insertFirst(new Node<Object>("A", null));
-		cl.insertFirst(new Node<Object>(4, null));
-		cl.insertLast(new Node<Object>("B", null));
-		cl.insertLast(new Node<Object>(6, null));
+		cl.insertFirst(1);
+		cl.insertFirst(2);
+		cl.insertFirst("A");
+		cl.insertFirst(4);
+		cl.insertLast("B");
+		cl.insertLast(6);
 		
 		cl.print();
 		

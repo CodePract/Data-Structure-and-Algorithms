@@ -12,7 +12,8 @@ public class CircularLinkedList<E> {
 
 	Node<E> tail = null;
 	
-	public void insertFirst(Node<E> node){
+	public void insertFirst(E e){
+		Node<E> node = new Node<E>(e, null);
 		if(tail == null){
 			node.setNext(node);
 		}
@@ -24,7 +25,8 @@ public class CircularLinkedList<E> {
 		tail = node;
 	}
 	
-	public void insertLast(Node<E> node){
+	public void insertLast(E e){
+		Node<E> node = new Node<E>(e, null);
 		if(tail == null){
 			node.setNext(node);
 			tail = node;
